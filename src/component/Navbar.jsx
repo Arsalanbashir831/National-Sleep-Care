@@ -3,6 +3,7 @@ import { Menu, Typography } from 'antd';
 import { MenuOutlined, CloseOutlined } from '@ant-design/icons';
 import { motion, AnimatePresence } from 'framer-motion';
 import logo from '../assets/logo.png'
+import { Link } from 'react-router-dom';
 const { Title } = Typography;
 
 const Navbar = () => {
@@ -15,12 +16,12 @@ const Navbar = () => {
       href: '/services',
       children: [
         { name: 'Implants', href: '/services/implants' },
-        { name: 'Sleep Apnea', href: '/services/sleep-apnea' },
+        { name: 'Sleep Apnea', href: '/services/SleepApnea' },
       ],
     },
-    { name: 'Our Mission', href: '/our-mission' },
-    { name: 'FAQs', href: '/faqs' },
-    { name: 'Contact Us', href: '/contact-us' },
+    { name: 'Our Mission', href: '/mission' },
+    { name: 'FAQs', href: '/faq' },
+    { name: 'Contact Us', href: '/contact' },
   ];
 
   const sidebarVariants = {
@@ -66,7 +67,7 @@ const Navbar = () => {
                   </Menu.SubMenu>
                 ) : (
                   <Menu.Item key={link.name}>
-                    <a href={link.href}>{link.name}</a>
+                    <Link to={link.href}>{link.name}</Link>
                   </Menu.Item>
                 )
               )}
@@ -81,13 +82,13 @@ const Navbar = () => {
               <Menu.SubMenu key={link.name} title={link.name}>
                 {link.children.map((subLink) => (
                   <Menu.Item key={subLink.name}>
-                    <a href={subLink.href}>{subLink.name}</a>
+                    <Link to={subLink.href}>{subLink.name}</Link>
                   </Menu.Item>
                 ))}
               </Menu.SubMenu>
             ) : (
               <Menu.Item key={link.name}>
-                <a href={link.href}>{link.name}</a>
+                <Link to={link.href}>{link.name}</Link>
               </Menu.Item>
             )
           )}

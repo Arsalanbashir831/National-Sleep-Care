@@ -1,28 +1,40 @@
-import React from 'react';
 import { Card } from 'antd';
-import { CheckCircleOutlined } from '@ant-design/icons';
+import { RightOutlined } from '@ant-design/icons';
+import { motion } from 'framer-motion';
 
-const { Meta } = Card;
+const CardComponent = ({ icon, title, description }) => {
+  const cardVariants = {
+    initial: { opacity: 0, y: 20 },
+    enter: { opacity: 1, y: 0, transition: { delay: 0.1 } },
+    hover: { scale: 1.03, transition: { type: "spring", stiffness: 300 } },
+  };
 
-const ServiceCard = ({ title, description, imageUrl }) => {
   return (
-    <Card
-      hoverable
-      style={{ width: 240 }}
-      cover={<img alt="example" src={imageUrl} className="object-cover h-48 w-full" />}
-      className="m-4 rounded-lg shadow-lg bg-white transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105"
+    <motion.div
+      className="w-80 h-auto bg-white shadow-lg rounded-lg overflow-hidden cursor-pointer hover:shadow-xl transform transition duration-500"
+      initial="initial"
+      animate="enter"
+      whileHover="hover"
+      variants={cardVariants}
     >
-      <Meta
-        title={<div className="font-semibold text-lg">{title}</div>}
-        description={
-          <div className="text-gray-600 text-sm">
-            {description}
-            <CheckCircleOutlined className="text-green-500 ml-2" />
+      <Card bordered={false} className="h-full flex flex-col justify-between p-2 items-center">
+        <div className="flex items-center space-x-4">
+          <div className="p-3 rounded-full bg-blue-100 text-blue-500">
+            {icon}
           </div>
-        }
-      />
-    </Card>
+          <div className="flex-1 min-w-0">
+            <p className="text-xl font-semibold text-gray-900 mb-1">
+              {title}
+            </p>
+            <p className="text-sm text-gray-500">
+              {description}
+            </p>
+          </div>
+        </div>
+      
+      </Card>
+    </motion.div>
   );
 };
 
-export default ServiceCard;
+export default CardComponent;
