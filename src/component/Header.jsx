@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Typography, Button } from 'antd';
 import { motion } from 'framer-motion';
 import herosection from '../assets/header.jpg';
+import { Link } from 'react-router-dom';
 
 const { Title } = Typography;
 
@@ -58,7 +59,7 @@ const HeroSection = () => {
         </motion.p>
         <div className='text-left' whileHover="hover" whileTap="tap" variants={buttonVariants}>
           <Button type="primary" href="/about-us" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4  h-10 rounded">
-            About Us
+          <Link to='/mission'>Our Mission</Link>  
           </Button>
         </div>
       </motion.div>

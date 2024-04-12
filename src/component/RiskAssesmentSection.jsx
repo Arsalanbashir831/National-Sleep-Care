@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from 'antd';
 import { TagOutlined, SafetyCertificateOutlined } from '@ant-design/icons';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const RiskAssessmentSection = () => {
   return (
@@ -45,7 +46,7 @@ Gain access to personalized insights and expert recommendations tailored just fo
 Don't settle for restless nights. Take our exclusive Sleep Assessment now and discover the path to your best sleep yet.
             </p>
             <Button type="primary" size="large" className="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-              Take Free Sleep Screener
+             <Link to='/contact'>Take Free Sleep Screener</Link> 
             </Button>
           </div>
         </div>
