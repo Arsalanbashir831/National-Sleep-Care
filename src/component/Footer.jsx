@@ -1,6 +1,22 @@
 import React from 'react';
 import { FacebookOutlined, TwitterOutlined, InstagramOutlined, LinkedinOutlined } from '@ant-design/icons';
 
+// Define an array for quick links
+const quickLinks = [
+  { name: "Home", url: "#home" },
+  { name: "Our Mission", url: "mission" },
+  { name: "FAQs", url: "faq" },
+  { name: "Contact", url: "contact" },
+];
+
+// Define an array for social media links
+const socialMediaLinks = [
+  { name: "Facebook", icon: <FacebookOutlined />, url: "https://www.facebook.com" },
+  { name: "Twitter", icon: <TwitterOutlined />, url: "https://www.twitter.com" },
+  { name: "Instagram", icon: <InstagramOutlined />, url: "https://www.instagram.com" },
+  { name: "LinkedIn", icon: <LinkedinOutlined />, url: "https://www.linkedin.com" },
+];
+
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white py-12">
@@ -10,10 +26,11 @@ const Footer = () => {
         <div>
           <h2 className="text-xl font-semibold mb-6">Quick Links</h2>
           <ul className="space-y-2">
-            <li><a href="#" className="text-gray-300 hover:text-blue-400 transition-colors">Home</a></li>
-            <li><a href="#" className="text-gray-300 hover:text-blue-400 transition-colors">Products</a></li>
-            <li><a href="#" className="text-gray-300 hover:text-blue-400 transition-colors">Services</a></li>
-            <li><a href="#" className="text-gray-300 hover:text-blue-400 transition-colors">Contact</a></li>
+            {quickLinks.map(link => (
+              <li key={link.name}>
+                <a href={link.url} className="text-gray-300 hover:text-blue-400 transition-colors">{link.name}</a>
+              </li>
+            ))}
           </ul>
         </div>
 
@@ -29,18 +46,11 @@ const Footer = () => {
         <div>
           <h2 className="text-xl font-semibold mb-6">Follow Us</h2>
           <div className="flex space-x-4">
-            <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
-              <FacebookOutlined style={{ fontSize: '24px' }} />
-            </a>
-            <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
-              <TwitterOutlined style={{ fontSize: '24px' }} />
-            </a>
-            <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
-              <InstagramOutlined style={{ fontSize: '24px' }} />
-            </a>
-            <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
-              <LinkedinOutlined style={{ fontSize: '24px' }} />
-            </a>
+            {socialMediaLinks.map(link => (
+              <a key={link.name} href={link.url} className="text-gray-400 hover:text-blue-400 transition-colors" aria-label={link.name}>
+                {link.icon}
+              </a>
+            ))}
           </div>
         </div>
 
