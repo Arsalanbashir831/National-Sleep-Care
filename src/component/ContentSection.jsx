@@ -32,13 +32,13 @@ const ContentSection = () => {
                 <div className="flex items-center">
                   <CheckCircleOutlined className="text-green-500 mr-3 text-xl" />
                   <p className="text-lg">
-                    Without Dedicated Sleep, dental practices have limited legal and clinical scope for OSA screenings...
+                    Without National Sleep Care, dental practices have limited legal and clinical scope for OSA screenings and treatment.
                   </p>
                 </div>
                 <div className="flex items-center">
                   <CheckCircleOutlined className="text-green-500 mr-3 text-xl" />
                   <p className="text-lg">
-                    When (or even if) that patient returns to your practice for follow-up...
+                  Keep patients within your existing practice, rather than referring to a different provider.
                   </p>
                 </div>
               </div>

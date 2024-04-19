@@ -9,6 +9,7 @@ import Contact from './pages/Contact'
 import Implant from './pages/Implant'
 import SleepApnea from './pages/SleepApnea'
 import DSO from './pages/DSO'
+import SleepScale from './pages/SleepScale'
 const App = () => {
   return (
     <>
@@ -21,6 +22,7 @@ const App = () => {
         <Route path='/faq' element={<FAQ/>} />
         <Route path='/contact' element={ <Contact/>} />
         <Route path='/DSO' element={ <DSO/> } />
+        <Route path='/sleepscale' element={ <SleepScale/> } />
        
       </Routes>
       <Footer></Footer>

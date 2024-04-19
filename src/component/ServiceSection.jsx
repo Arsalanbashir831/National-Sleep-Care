@@ -44,7 +44,7 @@ const ServicesSection = () => {
     <div className="py-16 px-4 bg-gradient-to-r from-blue-100 to-white">
       <div className="max-w-6xl mx-auto text-center mb-12">
         <h2 className="text-4xl font-bold text-gray-800 mb-6">
-          Corporate, "grandfathered in" rates are just the beginning of what you get with Dedicated Sleep.
+          Corporate, "grandfathered in" rates are just the beginning of what you get with National Sleep Care.
         </h2>
         <p className="text-lg text-gray-600">
           All of our consolidated systems launch on day one of our partnership, and include:

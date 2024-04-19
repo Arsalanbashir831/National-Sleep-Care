@@ -36,10 +36,35 @@ function DSO() {
     };
 
     // Handler for form submission
-    const handleSubmit = (event, answers, formName) => {
+    const handleSubmit = async (event, answers, formName) => {
         event.preventDefault();
         console.log(`${formName} Answers:`, answers);
         alert(`Thank you for completing ${formName}!`);
+        if (formName === "Dental Clinics") {
+            await event.preventDefault();
+            const endpoint = 'https://sheet.best/api/sheets/5aa43cf6-3e09-49af-9fea-d877030c5397'; // Provided by Sheet.best
+            try {
+                const response = await fetch(endpoint + '?key=LreR2TjF@Qvzm_bG5M$pRj%uE00FUIGFJCP6nkH8obiqHgfzugh7rxO-kwZmdY#F', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-Api-Key': 'LreR2TjF@Qvzm_bG5M$pRj%uE00FUIGFJCP6nkH8obiqHgfzugh7rxO-kwZmdY#F' // API Key
+                    },
+                    body: JSON.stringify({
+                        ...answers
+                    })
+                });
+                console.log(response);
+                if (response.ok) {
+                    alert('Form submitted successfully!');
+                } else {
+                    throw new Error('Submission failed');
+                }
+            } catch (error) {
+                console.error('Error during form submission:', error);
+                alert('Error submitting form');
+            }
+        }
     };
 
     return (

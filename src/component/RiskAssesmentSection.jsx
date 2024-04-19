@@ -35,18 +35,18 @@ const RiskAssessmentSection = () => {
           {/* Content Column */}
           <div className="flex-1">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight">
-              What's your risk of having Sleep Apnea or Insomnia?
+            See the first step in the patient treatment process.
             </h2>
             <p className="text-gray-600 mb-8">
              
-Unlock the secrets to better sleep with our exclusive Sleep Assessment. This quick, complimentary tool will reveal if you're facing hidden sleep challenges that could be impacting your life.
-
-Gain access to personalized insights and expert recommendations tailored just for you. Take the first step towards rejuvenating rest and wake up feeling refreshed every day.
-
-Don't settle for restless nights. Take our exclusive Sleep Assessment now and discover the path to your best sleep yet.
+            We use both the Epworth Sleepiness Scale and the STOP Bang
+Questionnaire as initial screening questionnaires for patients. Both screening
+questionnaires are approved by the American Academy of Dental Sleep Medicine
+(AADSM).
             </p>
+
             <Button type="primary" size="large" className="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-             <Link to='/contact'>Take Free Sleep Screener</Link> 
+             <Link to='/DSO'>Take Free Sleep Screener</Link> 
             </Button>
           </div>
         </div>

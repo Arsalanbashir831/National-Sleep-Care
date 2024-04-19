@@ -13,17 +13,17 @@ const cardData = [
   {
     icon: <HomeOutlined className="text-blue-500" style={{ fontSize: '24px' }} />,
     title: 'Home Sleep Test',
-    description: "Take an easy home sleep test that's covered by insurance.",
+    description: "Take a quick and easy sleep test from the comfort of your home.",
   },
   {
     icon: <SmileOutlined className="text-blue-500" style={{ fontSize: '24px' }} />,
     title: 'Customer Satisfaction',
-    description: "Our first priority is the customer satisfaction",
+    description: "Our first priority is customer satisfaction",
   },
   {
     icon: <SafetyCertificateOutlined className="text-blue-500" style={{ fontSize: '24px' }} />,
-    title: 'Verified Company',
-    description: "Discover the Confidence of Working with a Verified Company",
+    title: '100% Compliance Driven',
+    description: "We follow all regulatory requirements across every state",
   },
 ];
 
