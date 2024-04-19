@@ -8,7 +8,7 @@ import FAQ from './pages/FAQ'
 import Contact from './pages/Contact'
 import Implant from './pages/Implant'
 import SleepApnea from './pages/SleepApnea'
-
+import DSO from './pages/DSO'
 const App = () => {
   return (
     <>
@@ -20,6 +20,7 @@ const App = () => {
         <Route path='/services/SleepApnea' element={<SleepApnea/>} />
         <Route path='/faq' element={<FAQ/>} />
         <Route path='/contact' element={ <Contact/>} />
+        <Route path='/DSO' element={ <DSO/> } />
        
       </Routes>
       <Footer></Footer>

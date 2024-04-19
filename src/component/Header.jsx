@@ -57,9 +57,14 @@ const HeroSection = () => {
         >
          Embark on the pathway to enhanced productivity and well-being with our dedicated sleep solutions for businesses. Unlock the potential of better rest for your team, today
         </motion.p>
-        <div className='text-left' whileHover="hover" whileTap="tap" variants={buttonVariants}>
+        <div style={{display: 'flex',gap: 5}} className='text-left gap' whileHover="hover" whileTap="tap" variants={buttonVariants}>
           <Button type="primary" href="/about-us" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4  h-10 rounded">
-          <Link to='/mission'>Our Mission</Link>  
+          <Link to='/DSO'>DSO</Link>  
+          </Button>
+          <Button type="primary" href="/about-us" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4  h-10 rounded">
+          <Link to='/mission'>Dental Clinic</Link>  
+          
+
           </Button>
         </div>
       </motion.div>
