@@ -28,7 +28,7 @@ const features = [
 const FeatureCard = ({ title, content, icon }) => {
   return (
     <motion.div
-      className="flex flex-col justify-between p-6 rounded-lg shadow-lg text-white bg-gradient-to-br from-blue-700 to-blue-400 h-64"
+      className="flex flex-col justify-between p-6  rounded-lg shadow-lg text-white bg-gradient-to-br from-blue-700 to-blue-400 md:h-60 h-64"
       whileHover={{ translateY: -5 }}
       transition={{ duration: 0.3 }}
     >

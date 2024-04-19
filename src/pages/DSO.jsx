@@ -38,33 +38,31 @@ function DSO() {
     // Handler for form submission
     const handleSubmit = async (event, answers, formName) => {
         event.preventDefault();
-        console.log(`${formName} Answers:`, answers);
+         console.log(`${formName} Answers:`, answers);
         alert(`Thank you for completing ${formName}!`);
-        if (formName === "Dental Clinics") {
-            await event.preventDefault();
-            const endpoint = 'https://sheet.best/api/sheets/5aa43cf6-3e09-49af-9fea-d877030c5397'; // Provided by Sheet.best
-            try {
-                const response = await fetch(endpoint + '?key=LreR2TjF@Qvzm_bG5M$pRj%uE00FUIGFJCP6nkH8obiqHgfzugh7rxO-kwZmdY#F', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-Api-Key': 'LreR2TjF@Qvzm_bG5M$pRj%uE00FUIGFJCP6nkH8obiqHgfzugh7rxO-kwZmdY#F' // API Key
-                    },
-                    body: JSON.stringify({
-                        ...answers
-                    })
-                });
-                console.log(response);
-                if (response.ok) {
-                    alert('Form submitted successfully!');
-                } else {
-                    throw new Error('Submission failed');
-                }
-            } catch (error) {
-                console.error('Error during form submission:', error);
-                alert('Error submitting form');
-            }
-        }
+        // if (formName === "Dental Clinics") {
+        //     await event.preventDefault();
+        //     const endpoint = 'https://sheet.best/api/sheets/c5ff2654-34f9-4413-b37b-074ad8abf7fb'; 
+        //     try {
+        //         const response = await fetch(`${endpoint}`, {
+        //             method: 'POST',
+        //             headers: {
+        //                 'Content-Type': 'application/json',
+        //                 'X-Api-Key': 'JxGWV-nw#V0gPNQy4hPfp-RdQI2irAYQ_Fn7mo4-hvM9HxWwrxdyNqoL4s4Eb_40', // API Key
+        //             },
+        //             body: JSON.stringify({ "test":"test"})
+        //         });
+        //         console.log(response);
+        //         if (response.ok) {
+        //             alert('Form submitted successfully!');
+        //         } else {
+        //             throw new Error('Submission failed');
+        //         }
+        //     } catch (error) {
+        //         console.error('Error during form submission:', error);
+        //         alert('Error submitting form');
+        //     }
+        // }
     };
 
     return (

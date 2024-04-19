@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Menu, Typography } from 'antd';
 import { MenuOutlined, CloseOutlined } from '@ant-design/icons';
 import { motion, AnimatePresence } from 'framer-motion';
-import logo from '../assets/logo.png'
+import logo from '../assets/ncslogo.png'
 import { Link } from 'react-router-dom';
 const { Title } = Typography;
 
@@ -34,7 +34,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 w-full flex items-center justify-between flex-wrap bg-white p-6 shadow-md z-50">
       <div className="flex items-center flex-shrink-0 text-black mr-6">
         {/* <Title level={4} className="text-blue-500 m-0">NationalSleepCare</Title> */}
-        <img src={logo} className='w-[100px] h-[80px]'/>
+        <img src={logo} className='w-[100px] h-[100px]'/>
       </div>
       <div className="block lg:hidden">
         <button onClick={() => setVisible(!visible)} className="text-blue-500 focus:outline-none">

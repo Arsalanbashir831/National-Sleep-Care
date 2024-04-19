@@ -59,13 +59,9 @@ const HeroSection = () => {
         </motion.p>
         <div style={{display: 'flex',gap: 5}} className='text-left gap' whileHover="hover" whileTap="tap" variants={buttonVariants}>
           <Button type="primary" href="/about-us" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4  h-10 rounded">
-          <Link to='/DSO'>DSO</Link>  
+          <Link to='/mission'>Our Mission</Link>  
           </Button>
-          <Button type="primary" href="/about-us" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4  h-10 rounded">
-          <Link to='/DSO'>Dental Clinic</Link>  
-          
 
-          </Button>
         </div>
       </motion.div>
 

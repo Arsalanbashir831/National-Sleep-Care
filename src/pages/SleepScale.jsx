@@ -1,64 +1,69 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { Form, InputNumber, Button, Modal } from 'antd';
+import { ExclamationCircleOutlined } from '@ant-design/icons';
 
-function SleepScale() {
-    const questionsSleepScale = [
-        "Rate your sleep quality from 0 (poor) to 4 (excellent).",
-        "How often do you feel rested upon waking? Rate from 0 (never) to 4 (always).",
-        "Rate your ability to fall asleep within 30 mins: 0 (never) to 4 (always).",
-        "How often do you sleep through the night without waking up? Rate 0 (never) to 4 (always)."
-    ];
+export default function SleepinessForm() {
+  const [form] = Form.useForm();
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [totalScore, setTotalScore] = useState(0);
 
-    const [sleepScaleAnswers, setSleepScaleAnswers] = useState({});
-    const [submissionCount, setSubmissionCount] = useState(0);
+  const situations = [
+    { key: 'reading', text: 'Sitting and reading' },
+    { key: 'tv', text: 'Watching TV' },
+    { key: 'sitting_inactive', text: 'Sitting inactive in a public place (e.g., a theater or a meeting)' },
+    { key: 'car_passenger', text: 'As a passenger in a car for an hour without a break' },
+    { key: 'lying_down', text: 'Lying down to rest in the afternoon when circumstances permit' },
+    { key: 'talking', text: 'Sitting and talking to someone' },
+    { key: 'lunch', text: 'Sitting quietly after a lunch without alcohol' },
+    { key: 'car_traffic', text: 'In a car, while stopped for a few minutes in traffic' }
+  ];
 
-    const handleInputChange = (answers, setAnswers, index, value) => {
-        if (value >= 0 && value <= 4 && value !== "") {
-            setAnswers({ ...answers, [index]: parseInt(value) });
-        }
-    };
+  const onFinish = (values) => {
+    const score = Object.values(values).reduce((acc, value) => acc + value, 0);
+    setTotalScore(score);
+    setIsModalVisible(true);
+  };
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        if (Object.keys(sleepScaleAnswers).length === questionsSleepScale.length &&
-            Object.values(sleepScaleAnswers).every(value => value !== undefined)) {
-            setSubmissionCount(prevCount => prevCount + 1);
-            alert(`Thank you for completing the Sleep Scale! Total submissions: ${submissionCount + 1}`);
-            console.log('Sleep Scale Answers:', sleepScaleAnswers);
-            let sum = 0
-            Object.values(sleepScaleAnswers).forEach((answers, index)=>{
-                sum += answers;
-            })
-            console.log("Sleep Answers = ", sum);
-        } else {
-            alert('Please answer all questions with a number from 0 to 4.');
-        }
-    };
+  const closeModal = () => {
+    setIsModalVisible(false);
+  };
 
-    return (
-        <div className="flex flex-wrap justify-center items-start gap-10 mt-20 mx-20 p-5 mt-40">
-            <form onSubmit={handleSubmit}
-                  className="flex-1 min-w-[300px] max-w-md space-y-6 bg-white p-6 shadow-lg rounded-lg transition duration-300 ease-in-out">
-                <h1 className="text-2xl font-bold text-center text-gray-800">Sleep Scale</h1>
-                {questionsSleepScale.map((question, index) => (
-                    <div key={index} className="flex flex-col">
-                        <label className="font-semibold text-gray-700">{question}</label>
-                        <input
-                            type="number"
-                            min="0"
-                            max="4"
-                            value={sleepScaleAnswers[index] || ''}
-                            onChange={(e) => handleInputChange(sleepScaleAnswers, setSleepScaleAnswers, index, e.target.value)}
-                            required
-                            className="mt-2 p-3 border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition"
-                        />
-                    </div>
-                ))}
-                <button type="submit" className="w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors duration-200">
-                    Submit
-                </button>
-            </form>
-        </div>
-    );
+  const getSleepStatus = (score) => {
+    if (score < 8) return "It is unlikely that you are abnormally sleepy.";
+    if (score < 10) return "You have an average amount of daytime sleepiness.";
+    if (score < 16) return "You may be excessively sleepy depending on the situation. You may want to consider seeking medical attention.";
+    return "You are excessively sleepy and should consider seeking medical attention.";
+  };
+
+  return (
+    <div className="p-5 py-40">
+      <h1 className="text-2xl font-bold mb-4">How Sleepy Are You?</h1>
+      <p className="mb-8">
+        How likely are you to doze off or fall asleep in the following situations? You should rate your chances
+        of dozing off, not just feeling tired. Even if you have not done some of these things recently try to
+        determine how they would have affected you. For each situation, decide whether or not you would
+        have:<br/>
+        · No chance of dozing =0<br/>
+        · Slight chance of dozing =1<br/>
+        · Moderate chance of dozing =2<br/>
+        · High chance of dozing =3
+      </p>
+      <Form form={form} onFinish={onFinish} layout="vertical">
+        {situations.map(situation => (
+          <Form.Item key={situation.key} label={situation.text} name={situation.key} rules={[{ required: true, message: 'Please input your score!' }]}>
+            <InputNumber min={0} max={3} />
+          </Form.Item>
+        ))}
+        <Form.Item>
+          <Button type="primary" htmlType="submit">
+            Submit
+          </Button>
+        </Form.Item>
+      </Form>
+      <Modal title="Your Total Score" visible={isModalVisible} onOk={closeModal} onCancel={closeModal} icon={<ExclamationCircleOutlined />}>
+        <p>Your total score is: {totalScore}</p>
+        <p>{getSleepStatus(totalScore)}</p>
+      </Modal>
+    </div>
+  );
 }
-
-export default SleepScale;

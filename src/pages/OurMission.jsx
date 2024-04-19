@@ -1,5 +1,7 @@
 import React from 'react';
 import { EnvironmentOutlined, TrophyOutlined, TeamOutlined } from '@ant-design/icons';
+import { Button } from 'antd';
+import { Link } from 'react-router-dom';
 
 const Feature = ({ icon, title, children }) => {
   return (
@@ -12,7 +14,13 @@ const Feature = ({ icon, title, children }) => {
     </div>
   );
 };
-
+const buttonVariants = {
+  hover: {
+    scale: 1.05,
+    transition: { duration: 0.3 },
+  },
+  tap: { scale: 0.95 },
+};
 const OurMission = () => {
   return (
     <div className=" px-4 bg-blue-50 py-[200px]">
@@ -21,9 +29,16 @@ const OurMission = () => {
         <p className="mb-8 text-lg">
           All people deserve the highest level of sleep and wellness care available, AND at the lowest cost possible because sleep wellness is a right which belongs to everyone.
         </p>
-        <button className="mb-10 bg-blue-600 text-white py-2 px-8 rounded hover:bg-blue-700 transition-colors">
-          Become a Partner Now
-        </button>
+        <div  className='flex justify-center py-5 gap-5' whileHover="hover" whileTap="tap" variants={buttonVariants}>
+          <Button type="primary"  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 w-[10%] h-10 rounded">
+          <Link to='/DSO'>DSO</Link>  
+          </Button>
+          <Button type="primary"  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 w-[10%]  h-10 rounded">
+          <Link to='/DSO'>Dental Clinic</Link>  
+          
+
+          </Button>
+        </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center md:text-left">
         <Feature icon={<EnvironmentOutlined style={{ fontSize: '24px', color: '#4a7cfd' }} />} title="Sustainable models">
