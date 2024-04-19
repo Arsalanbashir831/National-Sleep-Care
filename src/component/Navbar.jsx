@@ -22,6 +22,7 @@ const Navbar = () => {
     { name: 'Our Mission', href: '/mission' },
     { name: 'FAQs', href: '/faq' },
     { name: 'Contact Us', href: '/contact' },
+    { name: 'Sleep Scale', href: '/sleepscale'}
   ];
 
   const sidebarVariants = {

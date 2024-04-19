@@ -48,18 +48,23 @@ const HeroSection = () => {
         initial="hidden"
         animate="visible"
       >
-        <Title className=" leading-tight mb-4 md:w-[50%] text-left" level={1} style={{ maxWidth: '90%',color:"white" }}>Dedicated Sleep is a True Partner in Dental Sleep Care</Title>
+        <Title className=" leading-tight mb-4 md:w-[50%] text-left" level={1} style={{ maxWidth: '90%',color:"white" }}>National Sleep Care is a True Partner in Dental Sleep Care</Title>
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8, duration: 1 }}
           className="mb-8 md:w-[50%] w-full text-left"
         >
-         Embark on the pathway to enhanced productivity and well-being with our dedicated sleep solutions for businesses. Unlock the potential of better rest for your team, today
+         Expand your dental practice with our telemed sleep apnea program, enabling your dental patients to receive treatment for their obstructive sleep apnea
         </motion.p>
-        <div className='text-left' whileHover="hover" whileTap="tap" variants={buttonVariants}>
+        <div style={{display: 'flex',gap: 5}} className='text-left gap' whileHover="hover" whileTap="tap" variants={buttonVariants}>
           <Button type="primary" href="/about-us" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4  h-10 rounded">
-          <Link to='/mission'>Our Mission</Link>  
+          <Link to='/DSO'>DSO</Link>  
+          </Button>
+          <Button type="primary" href="/about-us" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4  h-10 rounded">
+          <Link to='/DSO'>Dental Clinic</Link>  
+          
+
           </Button>
         </div>
       </motion.div>
