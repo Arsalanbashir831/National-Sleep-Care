@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import { getFirestore, collection, addDoc } from 'firebase/firestore';
+import { app } from '../firebase'; // Make sure your Firebase config is correct and imported
 
 function DSO() {
-    // Arrays to store questions for each form
     const questionsFormOne = [
         "How many dental doctors are you working with?",
         "How many dental clinics do you work with?",
@@ -11,7 +12,6 @@ function DSO() {
     ];
 
     const questionsFormTwo = [
-
         'How many dental patients do you see per week?',
         'How many dental clinics do you have?',
         'Do you provide sleep care and services? If yes, which type?',
@@ -20,49 +20,38 @@ function DSO() {
         'Do you use medical insurance for dental sleep care?',
         'Do you provide services for oral appliances and/or DME?',
         'What type of Dental Implants do you perform, if any?'
-
     ];
 
-    // State to store answers for both forms. Keys will match question indices.
     const [formOneAnswers, setFormOneAnswers] = useState({});
     const [formTwoAnswers, setFormTwoAnswers] = useState({});
-
-    // State to track the active form
     const [activeForm, setActiveForm] = useState(null);
 
-    // Handler for input changes
+    const db = getFirestore(app); // Get Firestore instance
+
     const handleInputChange = (answers, setAnswers, index, value) => {
         setAnswers({ ...answers, [index]: value });
     };
 
-    // Handler for form submission
     const handleSubmit = async (event, answers, formName) => {
         event.preventDefault();
-         console.log(`${formName} Answers:`, answers);
-        alert(`Thank you for completing ${formName}!`);
-        // if (formName === "Dental Clinics") {
-        //     await event.preventDefault();
-        //     const endpoint = 'https://sheet.best/api/sheets/c5ff2654-34f9-4413-b37b-074ad8abf7fb'; 
-        //     try {
-        //         const response = await fetch(`${endpoint}`, {
-        //             method: 'POST',
-        //             headers: {
-        //                 'Content-Type': 'application/json',
-        //                 'X-Api-Key': 'JxGWV-nw#V0gPNQy4hPfp-RdQI2irAYQ_Fn7mo4-hvM9HxWwrxdyNqoL4s4Eb_40', // API Key
-        //             },
-        //             body: JSON.stringify({ "test":"test"})
-        //         });
-        //         console.log(response);
-        //         if (response.ok) {
-        //             alert('Form submitted successfully!');
-        //         } else {
-        //             throw new Error('Submission failed');
-        //         }
-        //     } catch (error) {
-        //         console.error('Error during form submission:', error);
-        //         alert('Error submitting form');
-        //     }
-        // }
+
+        const collectionName = formName === 'DSO' ? 'DSOFormData' : 'DentalClinicsFormData';
+
+        try {
+            await addDoc(collection(db, collectionName), {
+                ...answers,
+                submittedAt: new Date() // Include a timestamp if needed
+            });
+            alert(`Thank you for completing ${formName}!`);
+            if (formName === 'DSO') {
+                setFormOneAnswers({}); // Reset form one answers after submission
+            } else {
+                setFormTwoAnswers({}); // Reset form two answers after submission
+            }
+        } catch (error) {
+            console.error("Error adding document: ", error);
+            alert('Failed to submit form. Please try again.');
+        }
     };
 
     return (
