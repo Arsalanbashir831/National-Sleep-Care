@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Menu, Typography } from 'antd';
 import { MenuOutlined, CloseOutlined } from '@ant-design/icons';
 import { motion, AnimatePresence } from 'framer-motion';
-import logo from '../assets/nationalLogo.png'
+import logo from '../assets/logoncs.png'
 import { Link } from 'react-router-dom';
 const { Title } = Typography;
 

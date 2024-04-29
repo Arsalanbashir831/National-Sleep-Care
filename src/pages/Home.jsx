@@ -31,7 +31,7 @@ const Home = () => {
   return (
     <>
       <HeroSection />
-      <div className='flex justify-center flex-wrap gap-10 bg-gradient-to-r from-blue-100 to-white py-10'>
+      <div className='flex justify-center flex-wrap gap-10   py-10'>
         {cardData.map((card, index) => (
           <CardComponent 
             key={index}
