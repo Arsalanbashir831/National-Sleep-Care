@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircleOutlined, SnippetsOutlined, HeartOutlined, CustomerServiceOutlined } from '@ant-design/icons';
 
@@ -42,6 +42,10 @@ const FeatureCard = ({ title, content, icon }) => {
 };
 
 const SleepApnea = () => {
+  useEffect(() => {
+    // Scroll to the top of the page whenever location changes
+    window.scrollTo(0, 0);
+  },[]);
   return (
     <div className=" px-4 bg-blue-50 py-5">
       <div className="max-w-6xl mx-auto text-center mb-12">

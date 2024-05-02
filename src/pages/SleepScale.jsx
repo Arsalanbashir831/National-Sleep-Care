@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import { Form, InputNumber, Button, Modal } from 'antd';
+import React, { useState } from 'react';
+import { Form, Button, Modal, Radio } from 'antd';
 import { ExclamationCircleOutlined } from '@ant-design/icons';
 
-export default function SleepinessForm() {
+const SleepinessForm = () => {
   const [form] = Form.useForm();
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [totalScore, setTotalScore] = useState(0);
@@ -36,28 +36,20 @@ export default function SleepinessForm() {
   };
 
   return (
-    <div className="p-5 bg-white rounded-lg shadow-md">
+    <div className="p-6 bg-white rounded-lg shadow-md w-[90%] mx-auto">
       <h1 className="text-3xl font-bold mb-4 text-center">How Sleepy Are You?</h1>
       <p className="mb-8 text-gray-700 text-center">
         How likely are you to doze off or fall asleep in the following situations? Rate your chances of dozing off, not just feeling tired.
       </p>
-      <p className="mb-8 text-gray-700 text-center">
-        Use the scaling system below to rate each situation:
-      </p>
-      <div className="grid grid-cols-4 gap-4 text-center mb-4">
-        <div className="col-span-1">No chance</div>
-        <div className="col-span-1">Slight chance</div>
-        <div className="col-span-1">Moderate chance</div>
-        <div className="col-span-1">High chance</div>
-        <div className="col-span-1">0</div>
-        <div className="col-span-1">1</div>
-        <div className="col-span-1">2</div>
-        <div className="col-span-1">3</div>
-      </div>
       <Form form={form} onFinish={onFinish} layout="vertical">
         {situations.map(situation => (
-          <Form.Item key={situation.key} label={situation.text} name={situation.key} rules={[{ required: true, message: 'Please input your score!' }]}>
-            <InputNumber min={0} max={3} className="w-full" />
+          <Form.Item key={situation.key} label={situation.text} name={situation.key} rules={[{ required: true, message: 'Please select your response!' }]}>
+            <Radio.Group className="flex justify-between">
+              <Radio className="w-1/4 text-center" value={0}>No chance</Radio>
+              <Radio className="w-1/4 text-center" value={1}>Slight chance</Radio>
+              <Radio className="w-1/4 text-center" value={2}>Moderate chance</Radio>
+              <Radio className="w-1/4 text-center" value={3}>High chance</Radio>
+            </Radio.Group>
           </Form.Item>
         ))}
         <Form.Item className="text-center">
@@ -74,10 +66,12 @@ export default function SleepinessForm() {
         icon={<ExclamationCircleOutlined />}
         className="text-center"
       >
-        <p className="text-2xl font-bold">Your total score is:</p>
-        <p className="text-3xl font-bold text-blue-600">{totalScore}</p>
-        <p className="text-lg text-gray-800 mt-4">{getSleepStatus(totalScore)}</p>
+        <p className="text-xl font-bold mb-4">Your total score is:</p>
+        <p className="text-3xl font-bold text-blue-600 mb-6">{totalScore}</p>
+        <p className="text-lg text-gray-800">{getSleepStatus(totalScore)}</p>
       </Modal>
     </div>
   );
-}
+};
+
+export default SleepinessForm;

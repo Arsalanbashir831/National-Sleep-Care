@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { app } from '../firebase';
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import { Map, Marker } from "pigeon-maps"
 
 const Contact = () => {
+  useEffect(() => {
+    // Scroll to the top of the page whenever location changes
+    window.scrollTo(0, 0);
+  },[]);
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const db = getFirestore(app);
 
@@ -85,8 +89,8 @@ const Contact = () => {
           
           <div style={{ height: '300px' }}>
             {/* Replace with your map component */}
-            <Map height={300} defaultCenter={[40.3180882, -74.6552268]} defaultZoom={17}>
-      <Marker width={50} anchor={[40.3180882, -74.6552268]} />
+            <Map height={300} defaultCenter={[40.3182990, -74.6522268]} defaultZoom={17}>
+      <Marker width={50} anchor={[40.3182990, -74.6522268]} />
     </Map>
           </div>
         </div>

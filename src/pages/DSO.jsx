@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState ,useEffect} from 'react';
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import { app } from '../firebase'; // Make sure your Firebase config is correct and imported
 
 function DSO() {
+    useEffect(() => {
+        // Scroll to the top of the page whenever location changes
+        window.scrollTo(0, 0);
+      },[]);
     const questionsFormOne = [
         "How many dental doctors are you working with?",
         "How many dental clinics do you work with?",

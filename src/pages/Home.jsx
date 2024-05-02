@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import HeroSection from '../component/Header';
 import { HomeOutlined, SmileOutlined, SafetyCertificateOutlined } from '@ant-design/icons';
 import CardComponent from '../component/Card';
@@ -28,6 +28,10 @@ const cardData = [
 ];
 
 const Home = () => {
+  useEffect(() => {
+    // Scroll to the top of the page whenever location changes
+    window.scrollTo(0, 0);
+  },[]);
   return (
     <>
       <HeroSection />

@@ -9,12 +9,12 @@ import SleepCareImageRight from '../assets/testsect.jpg';
 const RiskAssessmentSection = () => {
   return (
     <motion.div 
-      className="min-h-screen flex justify-center items-center  bg-blue-600"
+      className=" flex justify-center items-center  missionsection"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="bg-white rounded-2xl shadow-2xl overflow-hidden lg:flex lg:justify-between h-auto w-full max-w-6xl">
+      <div className="bg-white rounded-2xl shadow-2xl overflow-hidden lg:flex lg:justify-between h-auto  w-[95%]">
         {/* Left Image Column */}
         <div className="hidden lg:block lg:w-1/2">
           <img src={SleepCareImageLeft} alt="Sleep Care Image" className="object-cover h-full w-full" />

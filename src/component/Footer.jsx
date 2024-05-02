@@ -1,6 +1,7 @@
 import React from 'react';
 import { FacebookOutlined, TwitterOutlined, InstagramOutlined, EnvironmentOutlined, PhoneOutlined, MailOutlined } from '@ant-design/icons';
 import { Map, Marker } from "pigeon-maps"
+import { Link } from 'react-router-dom';
 const quickLinks = [
   { name: "Home", url: "/" },
   { name: "Our Mission", url: "mission" },
@@ -25,7 +26,7 @@ const Footer = () => {
           <ul className="space-y-2">
             {quickLinks.map(link => (
               <li key={link.name}>
-                <a href={link.url} className="text-gray-300 hover:text-blue-400 transition-colors">{link.name}</a>
+                <Link to={link.url} className="text-gray-300 hover:text-blue-400 transition-colors">{link.name}</Link>
               </li>
             ))}
           </ul>
@@ -54,8 +55,8 @@ const Footer = () => {
             <PhoneOutlined />
             <span>{contactInfo.phoneNumber}</span>
           </div>
-          <Map height={300} defaultCenter={[40.3180882, -74.6552268]} defaultZoom={17}>
-      <Marker width={50} anchor={[40.3180882, -74.6552268]} />
+          <Map height={300} defaultCenter={[40.3182990, -74.6522268]} defaultZoom={17}>
+      <Marker width={50} anchor={[40.3182990, -74.6522268]} />
     </Map>
         </div>
       </div>

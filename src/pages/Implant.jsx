@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ToolOutlined, SmileOutlined, DollarCircleOutlined, SyncOutlined } from '@ant-design/icons';
 
@@ -44,6 +44,10 @@ const FeatureCard = ({ title, content, icon }) => {
 // ...
 
 const Implant = () => {
+  useEffect(() => {
+    // Scroll to the top of the page whenever location changes
+    window.scrollTo(0, 0);
+  },[]);
   return (
     <div className="py-5 px-4 bg-gray-50">
       <div className="max-w-6xl mx-auto text-center mb-12">

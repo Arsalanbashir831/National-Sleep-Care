@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { PlusCircleOutlined, MinusCircleOutlined } from '@ant-design/icons';
 
 // Single accordion item component
 const AccordionItem = ({ question, answer }) => {
+  useEffect(() => {
+    // Scroll to the top of the page whenever location changes
+    window.scrollTo(0, 0);
+  },[]);
   const [isOpen, setIsOpen] = useState(false);
 
   const variants = {
