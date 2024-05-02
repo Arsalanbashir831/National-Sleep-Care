@@ -28,7 +28,7 @@ const features = [
 const FeatureCard = ({ title, content, icon }) => {
   return (
     <motion.div
-      className="flex flex-col justify-between p-6 rounded-lg shadow-lg text-white bg-gradient-to-br from-blue-700 to-blue-400 h-64"
+      className="flex flex-col justify-between p-6 rounded-lg shadow-lg text-white bg-gradient-to-br from-blue-700 to-blue-400 h-44"
       whileHover={{ translateY: -5 }}
       transition={{ duration: 0.3 }}
     >
@@ -43,7 +43,7 @@ const FeatureCard = ({ title, content, icon }) => {
 
 const SleepApnea = () => {
   return (
-    <div className=" px-4 bg-blue-50 py-[300px]">
+    <div className=" px-4 bg-blue-50 py-5">
       <div className="max-w-6xl mx-auto text-center mb-12">
         <h2 className="text-4xl font-bold text-gray-800 mb-6">
           Sleep Apnea Treatment Services

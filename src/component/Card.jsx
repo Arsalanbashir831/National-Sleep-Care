@@ -11,13 +11,13 @@ const CardComponent = ({ icon, title, description }) => {
 
   return (
     <motion.div
-      className="w-80 h-auto bg-white shadow-lg rounded-lg overflow-hidden cursor-pointer hover:shadow-xl transform transition duration-500"
+      className="w-80 h-auto  shadow-lg rounded-lg overflow-hidden cursor-pointer hover:shadow-xl transform transition duration-500 "
       initial="initial"
       animate="enter"
       whileHover="hover"
       variants={cardVariants}
     >
-      <Card bordered={false} className="h-full flex flex-col justify-between p-2 items-center">
+      <Card bordered={false} className="h-full flex flex-col justify-between p-2 items-center bg-[#C9E2F8]">
         <div className="flex items-center space-x-4">
           <div className="p-3 rounded-full bg-blue-100 text-blue-500">
             {icon}

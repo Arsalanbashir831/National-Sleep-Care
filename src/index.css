@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.missionsection{
+    /* background: url('../src/assets/bg_fra.png') ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-clip: content-box; */
+
+    background: radial-gradient(circle, #138cff 10%, transparent 11%),radial-gradient(circle at bottom left, #138cff 5%, transparent 6%),radial-gradient(circle at bottom right, #138cff 5%, transparent 6%),radial-gradient(circle at top left, #138cff 5%, transparent 6%),radial-gradient(circle at top right, #138cff 5%, transparent 6%);
+        background-size: 3em 3em;
+        background-color: #ffffff;
+        opacity: 1
+    
+  
+}

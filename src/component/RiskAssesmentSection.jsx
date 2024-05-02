@@ -9,7 +9,7 @@ import SleepCareImageRight from '../assets/testsect.jpg';
 const RiskAssessmentSection = () => {
   return (
     <motion.div 
-      className="min-h-screen flex justify-center items-center py-20 px-2"
+      className="min-h-screen flex justify-center items-center  bg-blue-600"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -29,9 +29,6 @@ const RiskAssessmentSection = () => {
             We use both the Epworth Sleepiness Scale and the STOP Bang Questionnaire as initial screening questionnaires for patients. Both screening questionnaires are approved by the American Academy of Dental Sleep Medicine (AADSM).
           </p>
 
-          {/* Button for Sleep Screener Test */}
-
-          {/* Encouragement Text */}
           <p className="text-lg text-gray-700 mb-6">
             Start your journey towards better sleep and overall health with our free sleep screener test. Identifying sleep disorders early can lead to effective treatments and improved quality of life.
           </p>

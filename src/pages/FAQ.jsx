@@ -12,7 +12,7 @@ const AccordionItem = ({ question, answer }) => {
   };
 
   return (
-    <div className="border-b-2">
+    <div className="border-b-2 ">
       <button
         className="flex justify-between items-center w-full py-4"
         onClick={() => setIsOpen(!isOpen)}
@@ -77,7 +77,7 @@ const FAQSection = () => {
   ];
 
   return (
-    <div className="bg-white  px-6 py-[300px]">
+    <div className="bg-white  px-6 py-7">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-2xl font-bold text-center mb-8">Frequently Asked Questions</h2>
         <div className="space-y-2">

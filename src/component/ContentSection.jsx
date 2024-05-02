@@ -11,7 +11,7 @@ const ContentSection = () => {
 
   return (
     <motion.div
-      className="py-10 lg:py-20 px-4 lg:px-8" // Adjusted padding for responsiveness
+      className=" py-2 px-4 lg:px-8 missionsection" // Adjusted padding for responsiveness
       initial="hidden"
       animate="visible"
       variants={sectionVariants}
@@ -19,7 +19,7 @@ const ContentSection = () => {
     >
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between">
         {/* Left Column with Bullet Points */}
-        <div className="w-full lg:w-1/2 px-4 lg:px-10 py-6 lg:py-12 text-gray-800"> {/* Adjusted padding for responsiveness */}
+        <div className="w-full lg:w-1/2 px-4 lg:px-10 py-6 lg:py-12 text-gray-800 bg-white"> {/* Adjusted padding for responsiveness */}
           <div className="space-y-4">
             <div className="flex items-start"> {/* Updated alignment for bullet points */}
               <CheckCircleOutlined className="text-green-500 mt-1 mr-3 text-xl" /> {/* Adjusted margin for vertical alignment */}

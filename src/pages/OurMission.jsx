@@ -15,23 +15,16 @@ const Feature = ({ icon, title, children }) => {
 
 const OurMission = () => {
   return (
-    <div className="px-4 pt-56 ">
-      <div className="max-w-6xl mx-auto text-center">
+    <div className="px-4  ">
+      <div className="max-w-6xl mx-auto text-center ">
         <h2 className="text-4xl font-bold mb-4">Company Mission</h2>
-        <p className="mb-8 text-lg w-[80%] m-auto">
+        <p className="mb-8 text-lg w-[80%] m-auto ">
           All people deserve the highest level of sleep and wellness care available, AND at the lowest cost possible because sleep wellness is a right which belongs to everyone.
         </p>
-        <div className="flex justify-center space-x-5 mb-8">
-          <Button type="primary">
-            <Link to="/DSO">DSO</Link>
-          </Button>
-          <Button type="primary">
-            <Link to="/DentalClinic">Dental Clinic</Link>
-          </Button>
-        </div>
+       
       </div>
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-        <Feature
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 ">
+        <Feature 
           icon={<EnvironmentOutlined style={{ fontSize: '24px', color: '#4a7cfd' }} />}
           title="Sustainable models"
         >
@@ -50,6 +43,14 @@ const OurMission = () => {
           Our large networks of contracts and clinical and billing systems mean consolidated care for your patients – and a low-to-no-denial rate for you.
         </Feature>
       </div>
+      <div className="flex justify-center space-x-5 mb-8 my-5">
+          <Button type="primary">
+            <a href="/DSO">DSO</a>
+          </Button>
+          <Button type="primary">
+            <a href="/DSO">Dental Clinic</a>
+          </Button>
+        </div>
     </div>
   );
 };

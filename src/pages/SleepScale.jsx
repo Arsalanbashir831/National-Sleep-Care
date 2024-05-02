@@ -36,33 +36,47 @@ export default function SleepinessForm() {
   };
 
   return (
-    <div className="p-5 py-40">
-      <h1 className="text-2xl font-bold mb-4">How Sleepy Are You?</h1>
-      <p className="mb-8">
-        How likely are you to doze off or fall asleep in the following situations? You should rate your chances
-        of dozing off, not just feeling tired. Even if you have not done some of these things recently try to
-        determine how they would have affected you. For each situation, decide whether or not you would
-        have:<br/>
-        · No chance of dozing =0<br/>
-        · Slight chance of dozing =1<br/>
-        · Moderate chance of dozing =2<br/>
-        · High chance of dozing =3
+    <div className="p-5 bg-white rounded-lg shadow-md">
+      <h1 className="text-3xl font-bold mb-4 text-center">How Sleepy Are You?</h1>
+      <p className="mb-8 text-gray-700 text-center">
+        How likely are you to doze off or fall asleep in the following situations? Rate your chances of dozing off, not just feeling tired.
       </p>
+      <p className="mb-8 text-gray-700 text-center">
+        Use the scaling system below to rate each situation:
+      </p>
+      <div className="grid grid-cols-4 gap-4 text-center mb-4">
+        <div className="col-span-1">No chance</div>
+        <div className="col-span-1">Slight chance</div>
+        <div className="col-span-1">Moderate chance</div>
+        <div className="col-span-1">High chance</div>
+        <div className="col-span-1">0</div>
+        <div className="col-span-1">1</div>
+        <div className="col-span-1">2</div>
+        <div className="col-span-1">3</div>
+      </div>
       <Form form={form} onFinish={onFinish} layout="vertical">
         {situations.map(situation => (
           <Form.Item key={situation.key} label={situation.text} name={situation.key} rules={[{ required: true, message: 'Please input your score!' }]}>
-            <InputNumber min={0} max={3} />
+            <InputNumber min={0} max={3} className="w-full" />
           </Form.Item>
         ))}
-        <Form.Item>
-          <Button type="primary" htmlType="submit">
+        <Form.Item className="text-center">
+          <Button type="primary" htmlType="submit" className="w-40">
             Submit
           </Button>
         </Form.Item>
       </Form>
-      <Modal title="Your Total Score" visible={isModalVisible} onOk={closeModal} onCancel={closeModal} icon={<ExclamationCircleOutlined />}>
-        <p>Your total score is: {totalScore}</p>
-        <p>{getSleepStatus(totalScore)}</p>
+      <Modal
+        title="Your Total Score"
+        visible={isModalVisible}
+        onOk={closeModal}
+        onCancel={closeModal}
+        icon={<ExclamationCircleOutlined />}
+        className="text-center"
+      >
+        <p className="text-2xl font-bold">Your total score is:</p>
+        <p className="text-3xl font-bold text-blue-600">{totalScore}</p>
+        <p className="text-lg text-gray-800 mt-4">{getSleepStatus(totalScore)}</p>
       </Modal>
     </div>
   );

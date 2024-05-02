@@ -26,7 +26,7 @@ const FeatureCard = ({ title, content }) => {
     <Card
       className="feature-card"
       hoverable
-      style={{ background: 'linear-gradient(to bottom right, #4f46e5, #6e87f1)' }}
+      style={{ background: 'linear-gradient(to bottom right, #1976D2, #6e87f1)' }}
     >
       <Card.Meta
         title={<h3 className="card-title text-white">{title}</h3>}
