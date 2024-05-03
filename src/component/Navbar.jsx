@@ -62,7 +62,7 @@ const Navbar = () => {
                   <Menu.SubMenu key={link.name} title={link.name}>
                     {link.children.map((subLink) => (
                       <Menu.Item key={subLink.name}>
-                        <a href={subLink.href}>{subLink.name}</a>
+                        <Link to={subLink.href}>{subLink.name}</Link>
                       </Menu.Item>
                     ))}
                   </Menu.SubMenu>
