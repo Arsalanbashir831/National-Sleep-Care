@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Form, Button, Modal, Radio } from 'antd';
 import { ExclamationCircleOutlined } from '@ant-design/icons';
 
 const SleepinessForm = () => {
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  })
   const [form] = Form.useForm();
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [totalScore, setTotalScore] = useState(0);

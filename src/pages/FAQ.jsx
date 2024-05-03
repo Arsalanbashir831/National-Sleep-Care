@@ -49,7 +49,7 @@ const AccordionItem = ({ question, answer }) => {
 const FAQSection = () => {
   const faqData = [
     {
-      question: "What Services does National Sleep Care Offer?",
+      question: "What services does National Sleep Care Offer?",
       answer: "National Sleep Care offers oral devices, implants, Durable Medical Equipment (DME), home sleep tests, and the necessary transportation of any and all inventory",
     },
     {

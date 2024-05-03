@@ -60,9 +60,9 @@ const HeroSection = () => {
          Expand your dental practice with our telemed sleep apnea program, enabling your dental patients to receive treatment for their obstructive sleep apnea
         </motion.p>
         <div style={{display: 'flex',gap: 5}} className='text-center gap justify-center  ' whileHover="hover" whileTap="tap" variants={buttonVariants}>
-          <Button type="primary" href="/mission" className="bg-blue-500 hover:bg-blue-700 w-[20%] text-white font-bold py-2 px-4  h-10 rounded">
-          <Link to='/mission'>Our Mission</Link>  
-          </Button>
+        
+          <Link className="bg-blue-500 hover:bg-blue-700 w-[20%] text-white font-bold py-2 px-4  h-10 rounded" to='/mission'>Our Mission</Link>  
+     
 
         </div>
       </motion.div>

@@ -32,9 +32,9 @@ const RiskAssessmentSection = () => {
           <p className="text-lg text-gray-700 mb-6">
             Start your journey towards better sleep and overall health with our free sleep screener test. Identifying sleep disorders early can lead to effective treatments and improved quality of life.
           </p>
-          <Button type="primary" size="large" className="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-6">
-            <Link to='/DSO'>Take Free Sleep Screener</Link> 
-          </Button>
+         
+            <Link className=" text-center text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-6" to='/sleepscale'>Take Free Sleep Screener</Link> 
+       
 
           {/* Right Image (Mobile View) */}
           <div className="lg:hidden">

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { EnvironmentOutlined, TrophyOutlined, TeamOutlined } from '@ant-design/icons';
 import { Button, Card } from 'antd';
-import { Link } from 'react-router-dom';
+import { Link , useNavigate } from 'react-router-dom';
 
 
 const Feature = ({ icon, title, children }) => {
@@ -15,6 +15,7 @@ const Feature = ({ icon, title, children }) => {
 };
 
 const OurMission = () => {
+  const navigation = useNavigate()
   useEffect(() => {
     // Scroll to the top of the page whenever location changes
     window.scrollTo(0, 0);
@@ -49,10 +50,14 @@ const OurMission = () => {
         </Feature>
       </div>
       <div className="flex justify-center space-x-5 mb-8 my-5">
-          <Button type="primary">
+          <Button onClick={()=> {
+            navigation('/DSO')
+          }} type="primary">
             <Link to="/DSO">DSO</Link>
           </Button>
-          <Button type="primary">
+          <Button onClick={()=> {
+            navigation('/DSO')
+          }} type="primary">
             <Link to="/DSO">Dental Clinic</Link>
           </Button>
         </div>
