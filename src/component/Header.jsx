@@ -48,7 +48,7 @@ const HeroSection = () => {
         initial="hidden"
         animate="visible"
       >
-        <Title className=" leading-tight mb-4  text-center" level={0} style={{ maxWidth: '90%',color:"white",fontSize:40 }}>National Sleep Care is a True Partner in Dental Sleep Care</Title>
+        <Title className=" leading-tight mb-4  text-center m-auto" level={0} style={{ maxWidth: '55%',color:"white",fontSize:40 }}>National Sleep Care is a True Partner in Dental Sleep Care</Title>
         
         <div className='bg-blue-600 h-1 w-[50%] m-auto my-2'></div>
         <motion.p
